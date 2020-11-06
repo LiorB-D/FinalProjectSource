@@ -7,6 +7,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import {Home} from './Home.js'
+import {About} from './About.js'
+import {Info} from './Info.js'
 
 function App() {
   return (
@@ -26,7 +29,8 @@ function App() {
         <Switch>
             <Route path="/home">
               <h1>Home</h1>
-              <TextField label = "My Zipcode"/>
+              <Home/>
+
             </Route>
             <Route path="/about">
               <h1>About</h1>
