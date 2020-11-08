@@ -15,14 +15,14 @@ function App() {
   return (
     <Router>
       <div className = "App">
-      <nav><ul> 
-          <li>
+      <nav><ul className = "TopBar"> 
+          <li className = "NavItem">
             <Link to="/home">Home</Link>
           </li>
-          <li>
+          <li className = "NavItem">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className = "NavItem">
             <Link to="/info">More Information</Link>
           </li>
         </ul></nav>
@@ -30,13 +30,14 @@ function App() {
             <Route path="/home">
               <h1>Home</h1>
               <Home/>
-
             </Route>
             <Route path="/about">
               <h1>About</h1>
+              <About/>
             </Route>
             <Route path="/info">
               <h1>More Information</h1>
+              <Info/>
             </Route>
 
         </Switch>
