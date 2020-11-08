@@ -17,7 +17,7 @@ function App() {
       <div className = "App">
       <nav><ul className = "TopBar"> 
           <li className = "NavItem">
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className = "NavItem">
             <Link to="/about">About</Link>
@@ -27,10 +27,6 @@ function App() {
           </li>
         </ul></nav>
         <Switch>
-            <Route path="/home">
-              <h1>Home</h1>
-              <Home/>
-            </Route>
             <Route path="/about">
               <h1>About</h1>
               <About/>
@@ -38,6 +34,10 @@ function App() {
             <Route path="/info">
               <h1>More Information</h1>
               <Info/>
+            </Route>
+            <Route path="/">
+              <h1>Home</h1>
+              <Home/>
             </Route>
 
         </Switch>
