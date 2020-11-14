@@ -4,24 +4,29 @@ import Button from '@material-ui/core/Button';
 import './App.css';
 
 
-const url = "https://api.covidtracking.com/v1/states/va/current.json"
+
 
 export function Home(){
 
     const [searchStr, setSearchStr] = useState("VA");
     const [covidData, setData] = useState()
-
-    const fetchData = async () => {
+    const [url, setUrl] = useState("https://api.covidtracking.com/v1/states/va/current.json")
+    const fetchData = async (s) => {
       let resp = fetch(url).then(response => response.json()).then(data => {
         console.log(data)
-        setData(data)
+        updateCovid(data)
       })
     }  
 
+    const updateCovid = (d) => {
+      setData(d)
+    }
     const search = (event) => {
-      fetchData()
+      setUrl("https://api.covidtracking.com/v1/states/" + searchStr + "/current.json")
+      fetchData(searchStr)
     }
     const updateField = e => {
+      console.log(e.target.value)
       setSearchStr(e.target.value)
     }
     const DisplayData = () => {
@@ -29,10 +34,16 @@ export function Home(){
       if(covidData == null) {
         return <p>Type in a valid state abbreviation</p>
       } else {
-        return (
-          <p>
+        return (<div>
+          <h1>
             {covidData.state}
-          </p>
+            
+          </h1>
+          <h5>Deaths: {covidData.death}</h5>
+          <h5>Positive: {covidData.positive}</h5>
+          <h5>Negative: {covidData.negative}</h5>
+          
+          </div>
         )
       }
     }
