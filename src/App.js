@@ -10,17 +10,11 @@ import {
 import {Home} from './Home.js'
 import {About} from './About.js'
 import {Info} from './Info.js'
-import ReactMapGL from 'react-mapbox-gl';
+
 
 function App() {
 
-  const [viewport, setViewport] = useState ({
-    width: 1200,
-    height: 500,
-    latitude: 38.034494,
-    longitude: -78.504003,
-    zoom: 13,
-  });
+
 
   return (
     <Router>
@@ -47,11 +41,6 @@ function App() {
             </Route>
             <Route path="/">
               <h1>Home</h1>
-              <ReactMapGL
-                mapboxApiAccessToken="process.env.pk.eyJ1IjoicnVkeXNjaG5laWRlciIsImEiOiJja2dwZWszazQwaXdjMnFwM3dodTk1ZHB4In0.yCwfcZYI9zIEaEO978lDqQ"
-                {...viewport}
-                onViewportChange={nextViewport => setViewport(nextViewport)}
-              />
               <Home/>
             </Route>
 
