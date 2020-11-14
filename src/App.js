@@ -28,7 +28,7 @@ function App() {
         </ul></nav>
         <Switch>
             <Route path="/about">
-              <h1>About</h1>
+              <h1>About Us</h1>
               <About/>
             </Route>
             <Route path="/info">
