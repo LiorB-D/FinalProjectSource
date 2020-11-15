@@ -15,7 +15,6 @@ import {Info} from './Info.js'
 function App() {
 
 
-
   return (
     <Router>
       <div className = "App">

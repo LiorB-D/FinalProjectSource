@@ -69,10 +69,11 @@ h1 {
 
 .Home {
   margin-left: 30px;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
 }
 .btn {
-  margin-top: 20px
+  margin-top: 20px;
+}
+
+.chart {
+  width: 45%;
 }
