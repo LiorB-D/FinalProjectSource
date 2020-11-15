@@ -56,11 +56,13 @@ export function Home(){
       let pSet = []
       let dSet = []
       let i = 0
+      if(Array.isArray(d)) {
       d.slice(0,30).map((day) => {
         pSet.push({x: 30 - i, y: day.positive})
         dSet.push({x: 30 - i, y: day.death})
         i += 1
       })
+    }
       setLineData(pSet)
       setDeathData(dSet)
       console.log(lineData)
